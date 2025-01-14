@@ -6,7 +6,7 @@ if __name__ == "__main__":
     start = sys.argv[1] + " " + sys.argv[2]
     end = sys.argv[3] + " " + sys.argv[4]
 
-    if sys.argv[1] >= sys.argv[3] or sys.argv[2] >= sys.argv[4]:
+    if start >= end:
         print("Start date must be before end date")
         exit()
 
@@ -22,12 +22,12 @@ if __name__ == "__main__":
             location = row[3]
 
             if start <= row[0] <= end:
-                if color not in colors:
+                if color not in colors.keys():
                     colors[color] = 1
                 else:
                     colors[color] += 1
 
-                if location not in locations:
+                if location not in locations.keys():
                     locations[location] = 1
                 else:
                     locations[location] += 1
